@@ -1,4 +1,4 @@
-# 🏠 Bangalore Real Estate Price Predictor
+# Bangalore Real Estate Price Predictor
 
 This project leverages **machine learning** to predict real estate prices in **Bangalore, India**, based on key property features such as:
 
@@ -11,13 +11,13 @@ The solution includes **data preprocessing**, **model training**, and **deployme
 
 ---
 
-## 🔍 Project Overview
+## Project Overview
 
 With the booming real estate market in Bangalore, accurate price estimation is critical for both buyers and sellers. This project aims to simplify that process by using historical housing data and machine learning algorithms to make reliable predictions.
 
 ---
 
-## 📊 Features
+## Features
 
 - Cleaned and preprocessed real estate dataset  
 - Outlier removal and dimensionality reduction  
@@ -27,7 +27,7 @@ With the booming real estate market in Bangalore, accurate price estimation is c
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Python**  
 - **Pandas & NumPy** – Data manipulation  
@@ -37,3 +37,11 @@ With the booming real estate market in Bangalore, accurate price estimation is c
 - **HTML/CSS/Bootstrap** – Frontend interface  
 
 ---
+
+## Screenshots
+
+<img width="1437" alt="Screenshot 2025-05-09 at 6 34 21 PM" src="https://github.com/user-attachments/assets/d3843208-27d6-4911-adbe-d846b04673f0" />
+
+---
+
+
