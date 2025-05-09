@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangalore Home Price Prediction</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .hero-image {
+            background: linear-gradient(135deg, #3f51b5, #1a237e);
+            height: 200px;
+            position: relative;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            margin-top: -1.5rem;
+        }
+        .hero-text {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            width: 100%;
+            padding: 0 20px;
+        }
+        .hero-text h1 {
+            font-weight: 700;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        .hero-text p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 0;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .prediction-form {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            color: #3f51b5;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .result-box {
+            background-color: #3f51b5;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            visibility: hidden;
+        }
+    </style>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- App JS -->
+    <script src="app.js"></script>
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="hero-image">
+            <div class="hero-text">
+                <h1>Bangalore Home Price Prediction</h1>
+                <p>Get an accurate estimate for your dream home</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="prediction-form">
+                    <h3 class="section-title">Property Details</h3>
+                    
+                    <div class="mb-4">
+                        <label for="uiSqft" class="form-label">Area (Square Feet)</label>
+                        <input type="text" class="form-control" id="uiSqft" name="Squareft" value="1000">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label">BHK (Bedrooms)</label>
+                        <div class="btn-group w-100" role="group">
+                            <input type="radio" class="btn-check" name="uiBHK" id="radio-bhk-1" value="1">
+                            <label class="btn btn-outline-primary" for="radio-bhk-1">1</label>
+                            
+                            <input type="radio" class="btn-check" name="uiBHK" id="radio-bhk-2" value="2" checked>
+                            <label class="btn btn-outline-primary" for="radio-bhk-2">2</label>
+                            
+                            <input type="radio" class="btn-check" name="uiBHK" id="radio-bhk-3" value="3">
+                            <label class="btn btn-outline-primary" for="radio-bhk-3">3</label>
+                            
+                            <input type="radio" class="btn-check" name="uiBHK" id="radio-bhk-4" value="4">
+                            <label class="btn btn-outline-primary" for="radio-bhk-4">4</label>
+                            
+                            <input type="radio" class="btn-check" name="uiBHK" id="radio-bhk-5" value="5">
+                            <label class="btn btn-outline-primary" for="radio-bhk-5">5</label>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="form-label">Bathrooms</label>
+                        <div class="btn-group w-100" role="group">
+                            <input type="radio" class="btn-check" name="uiBathrooms" id="radio-bath-1" value="1">
+                            <label class="btn btn-outline-primary" for="radio-bath-1">1</label>
+                            
+                            <input type="radio" class="btn-check" name="uiBathrooms" id="radio-bath-2" value="2" checked>
+                            <label class="btn btn-outline-primary" for="radio-bath-2">2</label>
+                            
+                            <input type="radio" class="btn-check" name="uiBathrooms" id="radio-bath-3" value="3">
+                            <label class="btn btn-outline-primary" for="radio-bath-3">3</label>
+                            
+                            <input type="radio" class="btn-check" name="uiBathrooms" id="radio-bath-4" value="4">
+                            <label class="btn btn-outline-primary" for="radio-bath-4">4</label>
+                            
+                            <input type="radio" class="btn-check" name="uiBathrooms" id="radio-bath-5" value="5">
+                            <label class="btn btn-outline-primary" for="radio-bath-5">5</label>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="uiLocations" class="form-label">Location</label>
+                        <select class="form-select" id="uiLocations">
+                            <option value="" disabled selected>Choose a Location</option>
+                            <option>Electronic City</option>
+                            <option>Rajaji Nagar</option>
+                        </select>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary btn-lg" onclick="onClickedEstimatePrice()" type="button">Estimate Price</button>
+                    </div>
+                    
+                    <div id="uiEstimatedPrice" class="result-box mt-4">
+                        <div class="estimated-price"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="text-center text-muted py-4">
+            <p>&copy; 2025 Bangalore Home Price Prediction</p>
+        </footer>
+    </div>
+</body>
+</html>
