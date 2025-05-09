@@ -2,10 +2,10 @@
 
 This project leverages **machine learning** to predict real estate prices in **Bangalore, India**, based on key property features such as:
 
-- 📍 **Location**  
-- 📐 **Square Footage**  
-- 🛏️ **Number of Bedrooms (BHK)**  
-- 🛁 **Number of Bathrooms**  
+-  **Location**  
+-  **Square Footage**  
+-  **Number of Bedrooms (BHK)**  
+-  **Number of Bathrooms**  
 
 The solution includes **data preprocessing**, **model training**, and **deployment** via a simple and user-friendly **Flask web application**.
 
